@@ -1,0 +1,93 @@
+/* Basic Styles */
+:root {
+    --PrimaryColor: hsl(199, 100%, 33%);
+    --SecondaryColor: hsl(187, 85%, 43%);
+    --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColorDim: hsl(0, 0%, 93%);
+}
+
+.header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--whiteColorDim);
+    width: 100%;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.navBar {
+    display: none;
+    position: absolute;
+    background: var(--whiteColorDim);
+    height: max-content;
+    width: 80%;
+    border-radius: 1rem;
+    top: 6rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2000;
+    box-shadow: 0 2px 4px rgba(2, 15, 29, 0.904);
+    transition: 0.3s ease-in-out;
+}
+
+.activeNavBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navLists {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    padding: 1rem;
+}
+
+.navItem {
+    padding: 0.5rem 0;
+}
+
+.navlink {
+    color: var(--textColor);
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.closeNavbar {
+    display: none;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+/* Show close button and vertical menu on smaller screens */
+@media screen and (max-width: 768px) {
+    .navBar {
+        display: none;
+    }
+    
+    .activeNavBar {
+        display: flex;
+    }
+    
+    .closeNavbar {
+        display: block;
+    }
+    
+    .navLists {
+        flex-direction: column;
+    }
+    
+    .navItem {
+        padding: 0.5rem 0;
+    }
+    
+    .toggleNavbar {
+        display: block;
+    }
+}
